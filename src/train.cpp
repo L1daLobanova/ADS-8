@@ -28,7 +28,7 @@ int Train::getLength() {
       k += 1;
       countOp++;
     } //доёдём до светлой лампы
-    countOP++;
+    countOp++;
     cur->light = 0; //погасим её
     for (int i = k; i > 0; i--) {
       countOp++;
