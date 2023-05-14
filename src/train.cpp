@@ -4,7 +4,7 @@ Train::Train():countOp(0), first(nullptr) {}
 void Train::addCage(bool light) {
   Cage* newCage = new Cage;
   newCage->light = light; //создадим вагон и зажгём лампу
-  if (first == nullptr) { 
+  if (first == nullptr) {
     first = newCage;
     newCage->prev = newCage;
     newCage->next = newCage;
@@ -23,7 +23,7 @@ int Train::getLength() {
   int k = 1;
   while (true) { //запустим цикл
     cur = cur->next;
-    while (cur->light == 0){
+    while (cur->light == 0) {
       cur = cur->next;
       k += 1;
       countOp++;
@@ -33,8 +33,9 @@ int Train::getLength() {
       countOp++;
       cur = cur->prev;
     } // придём назад
-    if (cur->light = 0)
+    if (cur->light == 0)
       return k;//если она погасла, то мы нашли длину, иначе всё заново
+    k = 1;
   }
 }
 int Train::getOpCount() {
